@@ -1,0 +1,6 @@
+package com.cpnus.kalamkhabar
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
