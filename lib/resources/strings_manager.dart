@@ -15,7 +15,7 @@ class AppStrings{
 
 
   static const String cpnUs = 'cpn us';
-  static const String news = 'News';
+  static const String news = 'CPN Home';
   static const String aboutUs = 'About Us';
   static const String notices = 'Notices';
   static const String events = 'Events';
@@ -26,6 +26,12 @@ class AppStrings{
   static const String discussion = 'Discussion';
   static const String notification = 'Notification';
   static const String setting = 'Setting';
+  static const String donation = 'Donation';
+  static const String register = 'Register';
+  static const String login = 'Login';
+  static const String logout = 'Logout';
+  static const String more = 'More';
+  static const String changePassword = 'Change Password';
 
   static const String welcomeMessage = 'Welcome to Official App of CPN US';
 

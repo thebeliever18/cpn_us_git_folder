@@ -1,28 +1,28 @@
 class ApiConstant {
-  static const String baseUrl = 'https://cpn.ibibgroup.com/cpn/public/api';
+  static const String baseUrl = 'https://cpnapp.itsolutionsnepal.com/api';
   static const String newsImageUrl =
-      'https://cpn.ibibgroup.com/cpn/public/upload/news/';
+      'https://cpnapp.itsolutionsnepal.com/upload/news/';
   static const String bannerImageUrl =
-      'https://cpn.ibibgroup.com/cpn/public/upload/banner/';
+      'https://cpnapp.itsolutionsnepal.com/upload/banner/';
   static const String ourleaderImageUrl =
-      'https://cpn.ibibgroup.com/cpn/public/upload/ourleader/';
+      'https://cpnapp.itsolutionsnepal.com/upload/ourleader/';
   static const String videoImageUrl =
-      'https://cpn.ibibgroup.com/cpn/public/upload/video/';
+      'https://cpnapp.itsolutionsnepal.com/upload/video/';
 
   static const String galleryImageUrl =
-      'https://cpn.ibibgroup.com/cpn/public/galleryimage/';
+      'https://cpnapp.itsolutionsnepal.com/galleryimage/';
 
   static const String eventDownloadUrl =
-      'https://cpn.ibibgroup.com/cpn/public/event/';
+      'https://cpnapp.itsolutionsnepal.com/event/';
 
   static const String eventViewUrl =
-      'https://docs.google.com/viewer?url=https://cpn.ibibgroup.com/cpn/public/event/';
+      'https://docs.google.com/viewer?url=https://cpnapp.itsolutionsnepal.com/event/';
 
   static const String committeeImageUrl =
-      'https://cpn.ibibgroup.com/cpn/public/upload/comitydetails/';
+      'https://cpnapp.itsolutionsnepal.com/upload/comitydetails/';
 
   static const String noticeImageUrl =
-      'https://cpn.ibibgroup.com/cpn/public/notices/';
+      'https://cpnapp.itsolutionsnepal.com/notices/';
 
   static const String onBoarding = '$baseUrl/news';
   static const String banner = '$baseUrl/banner';

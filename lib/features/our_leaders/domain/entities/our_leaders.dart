@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class OurLeaders extends Equatable {
-  final int? ourleaderid;
+  final String? ourleaderid;
   final String? name;
   final String? position;
   final String? order;

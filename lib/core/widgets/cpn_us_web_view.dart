@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'dart:io';
-
 import 'package:cpn_us/core/helper/navigation_helper/navigation_helper.dart';
 import 'package:cpn_us/core/widgets/cpn_us_app_bar.dart';
 import 'package:cpn_us/dependency_injection.dart';

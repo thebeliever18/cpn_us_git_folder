@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ColorManager {
+  
+  static Color themeRedColor = Color.fromRGBO(192, 6, 13, 1);
+  static Color themeBlueColor = Color.fromRGBO(2, 51, 110, 1);
+
   static Color primary = "#f4f8f7".fromHex;
   static Color darkGrey = "#525252".fromHex;
   static Color grey = "#737477".fromHex;

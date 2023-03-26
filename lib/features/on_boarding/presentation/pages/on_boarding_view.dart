@@ -41,8 +41,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
           ],
         );
       }else if(state is OnBoardingLoaded){
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal:AppPadding.p20),
+        return Container(
           child: OnBoardingDisplay(onBoardingModel: state.onBoardingModel,),
         );
       }else if(state is OnBoardingNotLoaded){

@@ -1,6 +1,8 @@
+import 'package:cpn_us/core/constants/app_json.dart';
 import 'package:cpn_us/core/helper/navigation_helper/navigation_helper.dart';
 import 'package:cpn_us/core/widgets/menu_items.dart';
 import 'package:cpn_us/dependency_injection.dart';
+import 'package:cpn_us/features/change_password/presentation/pages/change_password_screen.dart';
 import 'package:cpn_us/landing/bloc/landing_bloc.dart';
 import 'package:cpn_us/resources/assets_manager.dart';
 import 'package:cpn_us/resources/color_manager.dart';
@@ -8,6 +10,14 @@ import 'package:cpn_us/resources/strings_manager.dart';
 import 'package:cpn_us/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../features/donation/presentation/pages/donation_view.dart';
+import '../../features/login/presentation/pages/login_screen.dart';
+import '../../features/more/presentation/view/MoreView.dart';
+import '../../features/register/presentation/pages/register_view.dart';
+import '../../resources/routes_manager.dart';
+import '../error/toast_response.dart';
 
 // ignore: must_be_immutable
 class CpnUsDrawer extends StatelessWidget {
@@ -16,6 +26,7 @@ class CpnUsDrawer extends StatelessWidget {
 
   final NavigationHelper navigationHelper = sl<NavigationHelper>();
   bool isActivate = false;
+
 
   @override
   Widget build(BuildContext context) {
@@ -142,22 +153,41 @@ class CpnUsDrawer extends StatelessWidget {
                   .add(OnDrawerItemClicked(index: 7,activate: !isActivate,appBarTitle: AppStrings.committee));
               scaffoldKey.currentState!.closeDrawer();
             },
-              ),
-          //  MenuItems(
-          //     menuTitle: AppStrings.discussion,
-          //     menuIcon: Icons.messenger_outline,
-          //        index: 8,
-          //     ),
-           MenuItems(
-            menuTitle: AppStrings.notification,
-            menuIcon: Icons.notifications_none_rounded,
-            index: 8,
           ),
-          //  MenuItems(
-          //   menuTitle: AppStrings.setting,
-          //   menuIcon: Icons.settings_outlined,
-          //   index: 10,
-          // ),
+          if (AppJSON.logInfo.isNotEmpty)
+            MenuItems(
+              menuTitle: AppStrings.changePassword,
+              menuIcon: Icons.password,
+              index: 9,
+              onTap: () async {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ChangePasswordScreen()));
+              },
+            ),
+          if (AppJSON.logInfo.isNotEmpty)
+            MenuItems(
+              menuTitle: AppStrings.logout,
+              menuIcon: Icons.logout,
+              index: 8,
+              onTap: () async {
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                prefs.clear();
+                prefs.commit();
+
+                AppJSON.logInfo = [];
+
+                successToast("Logout success");
+                navigationHelper.pushReplacementNamed(Routes.onBoardingRoute);
+              },
+            )
+          else
+            MenuItems(
+              menuTitle: AppStrings.login,
+              menuIcon: Icons.login,
+              index: 9,
+              onTap: () async {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+              },
+            ),
         ],
       ),
     );
